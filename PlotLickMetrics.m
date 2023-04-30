@@ -1,0 +1,25 @@
+function PlotLickMetrics(lickmetrics)
+yline(nanmean([(lickmetrics.early.ITImatchednolick+lickmetrics.late.ITImatchednolick)/2-lickmetrics.pre.ITImatchednolick]), '-', 'Color', [0.9333    0.6667    0.1216], 'LineWidth', 2)
+yline(nanmean([(lickmetrics.early.FAmatchednolick+lickmetrics.late.FAmatchednolick)/2-lickmetrics.pre.FAmatchednolick]), '-', 'Color',[0.5490    0.4275    0.1922], 'LineWidth', 2)
+yline(nanmean([(lickmetrics.early.Hitmatchednolick+lickmetrics.late.Hitmatchednolick)/2-lickmetrics.pre.Hitmatchednolick]), '-', 'Color', [ 0.1490    0.7608    0.9059]', 'LineWidth', 2)
+yline(nanmean([(lickmetrics.early.UnRewHitmatchednolick+lickmetrics.late.UnRewHitmatchednolick)/2-lickmetrics.pre.UnRewHitmatchednolick]), '-', 'Color',[0.1216    0.3843    0.4588], 'LineWidth', 2)
+
+errorbar(1,nanmean([lickmetrics.early.ITIlick-lickmetrics.pre.ITIlick]), nansem([lickmetrics.early.ITIlick-lickmetrics.pre.ITIlick]), 'ko', 'LineWidth', 1, 'MarkerSize', 12, 'MarkerFaceColor', [0.9333    0.6667    0.1216])
+errorbar(1.5,nanmean([lickmetrics.early.FAlick-lickmetrics.pre.FAlick ]), nansem([lickmetrics.early.FAlick-lickmetrics.pre.FAlick ]), 'ko', 'LineWidth', 1, 'MarkerSize', 12,'MarkerFaceColor',[0.5490    0.4275    0.1922])
+errorbar(2.5,nanmean([lickmetrics.early.Hitlick-lickmetrics.pre.Hitlick]), nansem([lickmetrics.early.Hitlick-lickmetrics.pre.Hitlick]), 'ko', 'LineWidth', 1, 'MarkerSize', 12,'MarkerFaceColor', [ 0.1490    0.7608    0.9059])
+errorbar(2,nanmean([lickmetrics.early.UnRewHitlick-lickmetrics.pre.UnRewHitlick]), nansem([lickmetrics.early.UnRewHitlick-lickmetrics.pre.UnRewHitlick]), 'ko', 'LineWidth', 1, 'MarkerSize', 12,'MarkerFaceColor', [0.1216    0.3843    0.4588])
+
+errorbar(3.5,nanmean([lickmetrics.late.ITIlick-lickmetrics.pre.ITIlick]), nansem([lickmetrics.late.ITIlick-lickmetrics.pre.ITIlick]), 'k^', 'LineWidth', 1, 'MarkerSize', 12,'MarkerFaceColor', [0.9333    0.6667    0.1216])
+errorbar(4,nanmean([lickmetrics.late.FAlick-lickmetrics.pre.FAlick ]), nansem([lickmetrics.late.FAlick-lickmetrics.pre.FAlick ]), 'k^', 'LineWidth', 1, 'MarkerSize', 12,'MarkerFaceColor',[0.5490    0.4275    0.1922])
+errorbar(5,nanmean([lickmetrics.late.Hitlick-lickmetrics.pre.Hitlick]), nansem([lickmetrics.late.Hitlick-lickmetrics.pre.Hitlick]), 'k^', 'LineWidth', 1, 'MarkerSize', 12,'MarkerFaceColor', [ 0.1490    0.7608    0.9059])
+errorbar(4.5,nanmean([lickmetrics.late.UnRewHitlick-lickmetrics.pre.UnRewHitlick]), nansem([lickmetrics.late.UnRewHitlick-lickmetrics.pre.UnRewHitlick]), 'k^', 'LineWidth', 1, 'MarkerSize', 12,'MarkerFaceColor', [0.1216    0.3843    0.4588])
+
+set(gca, 'color', 'none', 'FontSize', 12)
+xlim([0.5 5.5])
+ylabel('dF/F')
+xlabel('lick type')
+xticks([1 1.5 2 2.5 3.5 4.0 4.5 5.0])
+text(1.5,-0.02,'mean matched no-lick times')
+xticklabels({'ITI early','FA early', 'UnRewHit early', 'Hit early','ITI late','FA late', 'UnRewHit late', 'Hit late'})
+xtickangle(45)
+end
