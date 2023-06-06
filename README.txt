@@ -18,7 +18,7 @@ Licks: Lick onset times and matched no-lick times (in seconds, relative to segme
 peristimstruct: median dF/F traces aligned to Go (BW and CW) and NoGo (dummy piezo) times for each ROI
 perilickstruct: median dF/F traces aligned to lick (ITI licks, FA licks, Hit licks, Unrewarded Hit licks) and matched no-lick times for each ROI
 sig_inds_w: Logical vector specifying significantly whisker-reponsive ROIs (1 = whisker-responsive, 0 = no significant whisker-response)
-sig_inds_l: Logical vector specifying significantly lick-reponsive ROIs (1 = whisker-responsive, 0 = no significant lick-response)
+sig_inds_l: Logical vector specifying significantly lick-reponsive ROIs (1 = lick-responsive, 0 = no significant lick-response)
 BWid: Numerical best whisker for each ROI
 CWid: Columnar whisker for each ROI
 CWidnearest: Columnar whisker for each ROI, with nearest column listed for septal cells

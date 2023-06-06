@@ -27,7 +27,7 @@ meanranktc(CW_notat_pluspos_list,:) = NaN;
 
 errorbar([1:6], nanmean(meanranktc(sig_inds_w,1:6)),  nansem(meanranktc(sig_inds_w,1:6)),'k-', 'LineWidth', 2, 'color', 'k', 'MarkerSize', 2)
 set(gca, 'Color', 'none', 'FontSize', 12)
-ylabel('dF/F')
+ylabel('normalized dF/F')
 ylim([-0.2 1])
 xlim([1 7])
 xticks([1:7])
