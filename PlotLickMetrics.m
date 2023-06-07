@@ -23,7 +23,7 @@ errorbar(5.0, nanmean([lickmetrics.late.Hitmatchednolick-lickmetrics.pre.Hitmatc
 set(gca, 'color', 'none', 'FontSize', 11)
 xlim([0.5 5.5])
 ylim([-0.2 0.3])
-ylabel('dF/F (post-event - pre-event)')
+ylabel(['∆F/F (lick) or  ∆F/F (no-lick)' newline, 'relative to pre-event baseline'])
 xlabel('lick type')
 xticks([1 1.5 2 2.5 3.5 4.0 4.5 5.0])
 text(1.0, -0.11,'matched no-lick responses')
